@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+
+.webkit-text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.8);
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

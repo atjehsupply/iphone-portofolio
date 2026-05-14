@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- 1. OPTIMASI KONEKSI (Preconnect) -->
+    <!-- Menyiapkan jabat tangan dengan server eksternal lebih awal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon iPhone Custom dengan Aksen Emerald -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='25' y='10' width='50' height='80' rx='8' fill='%2318181b' stroke='%233f3f46' stroke-width='2'/><rect x='30' y='15' width='40' height='70' rx='4' fill='%23000000'/><rect x='42' y='16' width='16' height='4' rx='2' fill='%2327272a'/><circle cx='50' cy='80' r='3' fill='%2310b981'/></svg>" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- 2. SEO & BRANDING LANJUTAN -->
+    <title>Maulizar Portfolio | Digital Architect</title>
+    <meta name="description" content="Personal portfolio of Maulizar, showcasing software engineering and digital architecture." />
+    <meta name="theme-color" content="#000000" />
+    <meta name="author" content="Maulizar" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- 3. OPTIMASI RENDER (Font Swap) -->
+    <!-- Memastikan teks langsung muncul dengan font sistem sebelum font custom kelar di-load -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Apple Touch Icon (Jika disimpan di homescreen iOS) -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000000'/><rect x='30' y='15' width='40' height='70' rx='6' fill='none' stroke='%2310b981' stroke-width='3'/><circle cx='50' cy='20' r='2' fill='%2310b981'/></svg>" />
+
+    <!-- 4. CRITICAL CSS (Inline minimalis untuk background) -->
+    <style>
+      :root { background: #000000; color-scheme: dark; }
+      body { margin: 0; padding: 0; background-color: #000000; overflow: hidden; }
+      /* Menghindari layout shift saat loading */
+      #root { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- 5. LOADING PLACEHOLDER (Optional) -->
+      <!-- Ini muncul sedetik sebelum React nge-render, bikin kesan 'instan' -->
+      <div style="font-family: sans-serif; color: #10b981; font-weight: 900; letter-spacing: -0.05em; font-style: italic; font-size: 2rem; animation: pulse 2s infinite;">
+        MN.
+      </div>
+    </div>
+
+    <!-- Script Utama -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- 6. SERVICE WORKER REGISTRATION (Persiapan PWA) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {
+            // Silently fail if sw.js doesn't exist yet
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
